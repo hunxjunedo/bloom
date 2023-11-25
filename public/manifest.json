@@ -8,14 +8,16 @@
       "type": "image/x-icon"
     },
     {
-      "src": "bloomicon.png",
+      "src": "bloomicon2.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any",
+      "sizes": "144x144"
     },
     {
-      "src": "bloomicon.png",
+      "src": "bloom.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any",
+      "sizes": "550x550"
     }
   ],
   "start_url": ".",
