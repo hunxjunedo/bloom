@@ -1,8 +1,15 @@
 {
     "videos": [
         {
-            "name" : "blue flower" ,
+            "name" : "pink flower" ,
             "url" : "./assets/samplevideo.mp4" ,
+            "duration" : 5,
+            "avgcolor": "#b21944",
+            "oppcolor": "#ffd7c3"
+        },
+        {
+            "name" : "blue flower" ,
+            "url" : "./assets/vid2.mp4" ,
             "duration" : 5,
             "avgcolor": "#b21944",
             "oppcolor": "#ffd7c3"

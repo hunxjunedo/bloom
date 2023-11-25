@@ -14,7 +14,7 @@ import Window from './window';
 function App() {
   const playerRef = useRef(null);
   const [playerState, setPlayerState] = useState(null);
-  const [currentvideo, setcurrentvideo] = useState(0)
+  const [currentvideo, setcurrentvideo] = useState(1)
   const [twelwehrscheme, settwelwehrscheme] = useState(false)
   const [time, settime] = useState({hour : 23, minute: 23, second: 23, meridium: 'PM', day: 'Monday', month: 'June', date: 11})
   const [studytimer, setstudytimer] = useState(false);
