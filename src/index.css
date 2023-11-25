@@ -5,8 +5,172 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+
 }
 
+.start, .end{
+  align-self: center;
+  padding: 0 5px;
+  max-width: 90%;
+}
+
+.start{
+  justify-self: start;
+}
+
+.end{
+  justify-self: end;
+}
+
+
+
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+}
+.react-resizable-handle-sw {
+  bottom: 0;
+  left: 0;
+  cursor: sw-resize;
+  transform: rotate(90deg);
+}
+.react-resizable-handle-se {
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+}
+.react-resizable-handle-nw {
+  top: 0;
+  left: 0;
+  cursor: nw-resize;
+  transform: rotate(180deg);
+}
+.react-resizable-handle-ne {
+  top: 0;
+  right: 0;
+  cursor: ne-resize;
+  transform: rotate(270deg);
+}
+.react-resizable-handle-w,
+.react-resizable-handle-e {
+  top: 50%;
+  margin-top: -10px;
+  cursor: ew-resize;
+}
+.react-resizable-handle-w {
+  left: 0;
+  transform: rotate(135deg);
+}
+.react-resizable-handle-e {
+  right: 0;
+  transform: rotate(315deg);
+}
+.react-resizable-handle-n,
+.react-resizable-handle-s {
+  left: 50%;
+  margin-left: -10px;
+  cursor: ns-resize;
+}
+.react-resizable-handle-n {
+  top: 0;
+  transform: rotate(225deg);
+}
+.react-resizable-handle-s {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+
+
+
+.bold{
+  font-family: 'SF Compact Text Bold' !important;
+}
+
+.timer p{
+  cursor: pointer;
+}
+
+.Toastify__toast{
+  border-radius: 20px !important;
+  font-family: 'SF Compact Text Regular' !important;
+}
+
+.timersettings > div{
+  width: 90% !important
+}
+
+p{
+  margin: 0;
+}
+
+.switch div{
+width: fit-content;
+width: 100%;
+height: 100%;
+border-radius: 15px;
+align-items: center;
+display: grid;
+transition: 1s;
+cursor: pointer;
+}
+
+.reguar, body{
+  font-family: 'SF Compact Text Regular' !important;
+}
+
+#root{
+  width: 100vw;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1, h3{
+  margin: 1vw
+}
+
+@font-face {
+  font-family: 'SF Compact Text Bold';
+  src: url('../public/assets/SFPRODISPLAYBOLD.OTF');
+}
+
+@font-face {
+  font-family: 'SF Compact Text Regular';
+  src: url('../public/assets/SFPRODISPLAYREGULAR.OTF');
+}
+
+
+
+.video-react-control-bar, .video-react-button, .video-react-loading-spinner{
+  display: none !important;
+}
+
+.video-react{
+  pointer-events: none !important;
+  padding: 0 !important;
+  z-index: -1;
+  position: absolute !important;
+  top: 0 !important
+}
+
+video{
+  width: 100vw !important;
+  height: auto !important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -1,0 +1,11 @@
+{
+    "videos": [
+        {
+            "name" : "blue flower" ,
+            "url" : "./assets/samplevideo.mp4" ,
+            "duration" : 5,
+            "avgcolor": "#b21944",
+            "oppcolor": "#ffd7c3"
+        }
+    ]
+}
