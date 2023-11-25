@@ -28,11 +28,13 @@ const isLocalhost = Boolean(
         // Our service worker won't work if PUBLIC_URL is on a different origin
         // from what our page is served on. This might happen if a CDN is used to
         // serve assets; see https://github.com/facebook/create-react-app/issues/2374
+        console.log('publicurl error')
         return;
       }
   
       window.addEventListener('load', () => {
-        const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+        const swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`;
+        console.log(sw)
   
         if (isLocalhost) {
           // This is running on localhost. Let's check if a service worker still exists or not.
