@@ -4,7 +4,7 @@ import Draggable from "react-draggable"
 import Application from "./application";
 
 export default function (props) {
-    const [dockopen, setdockopen] = useState(false)
+
     const { studytimer, openwindows, setopenwindows, setstudytimer, accentclr, msize, xlsize, ssize, spotifylink, setspotifylink, timerpaused, maxtimersecs, settimerprogress, setmaxtimersecs, settimerpaused } = props
     const divstyles = {
         color: accentclr,
@@ -43,9 +43,11 @@ export default function (props) {
                     left: 10,
                     top: 10
                 }}>
-                    <div onClick={() => (setdockopen(!dockopen))} style={{
+                    <div  style={{
                         borderRadius: 20,
-                        background: 'rgb(10, 10, 10, 0.9)',
+                        background: 'rgb(156, 156, 156, 0.6)',
+                        cursor: 'move',
+                        backdropFilter: 'blur(10px)',
                         width: '5vw',
                         height: '5vw',
                         display: 'grid',
@@ -67,14 +69,14 @@ export default function (props) {
                         </div>
                     </div>
                     {
-                        dockopen ? (
+                        (
                             <div style={{
                                 width: '5vw',
                                 height: 'fit-content',
                                 display: 'grid',
                                 gridAutoFlow: 'row',
                                 position: "absolute",
-                                top: '7.5vw',
+                                top: '6vw',
                                 left: 10,
                                 background: 'rgb(156, 156, 156, 0.6)',
                                 borderRadius: 20,
@@ -82,14 +84,12 @@ export default function (props) {
                                 justifyItems: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Application {...{openwindows, accentclr, setopenwindows, setdockopen, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='settings'/>
-                 
+                                <Application {...{openwindows, accentclr, setopenwindows,  studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='settings'/>
+                                <Application {...{openwindows, accentclr, setopenwindows,  studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='notes'/>
 
                             </div>
 
-                        ) :
-
-                            ('')
+                        )
                     }
 
                 </div>

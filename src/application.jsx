@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import settingSVG from './apple-settings.svg';
+import notesSVG from './apple-notes.svg';
+
 import userSVG from './user.svg'
 import Window from './window';
 import Settings from './settings';
+import Notes from './notes';
 export default function Application(props){
     const {openwindows, setopenwindows, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink} = props
     console.log(openwindows)
@@ -31,9 +34,11 @@ export default function Application(props){
             var content = Settings
             var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs}
             break;
-        case 'credits':
-            icon = userSVG
-            content = 'hello'
+        case 'notes':
+            icon = notesSVG
+            content = Notes
+            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs}
+
         break;    
     
         default:

@@ -15,6 +15,10 @@ body {
   max-width: 90%;
 }
 
+.ant-modal-body *{
+  margin: 5px;
+}
+
 .start{
   justify-self: start;
 }
@@ -94,7 +98,7 @@ body {
 
 
 
-.bold{
+.bold, .bold *{
   font-family: 'SF Compact Text Bold' !important;
 }
 

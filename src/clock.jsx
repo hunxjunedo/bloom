@@ -6,10 +6,10 @@ export default function (props) {
     const { twelwehrscheme,secondstotime , oppclr, msize, xlsize, settwelwehrscheme, time, maxtimersecs , timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress } = props
 
     const infostudytimer = () => {
-        toast.info('study until you see the flower completely open!', {
-            position: "bottom-left",
-            autoClose: false,
-            hideProgressBar: true,
+        toast.success('study until you see the flower completely open!', {
+            position: "top-center",
+            autoClose: true,
+            hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,

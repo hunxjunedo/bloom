@@ -77,6 +77,18 @@ export default function Window(props) {
                                 components: {
                                     InputNumber: {
                                         handleBg: 'transparent'
+                                    },
+                                    Input: {
+                                        margin: 10
+                                    }
+                                    ,
+                                    Collapse: {
+                                    }
+                                    ,
+                                    Modal: {
+                                        contentBg: 'rgba(10, 10, 10, 0.9)',
+                                        headerBg: 'transparent',
+                                        borderRadius: 30
                                     }
                                 },
                                 token: {
@@ -86,6 +98,7 @@ export default function Window(props) {
                                     colorText: accentclr,
                                     colorTextQuaternary: "rgb(232 232 232 / 67%)",
                                     colorTextTertiary: "rgb(232 232 232 / 90%)",
+                                   
                                 }
                             }}
                             >
