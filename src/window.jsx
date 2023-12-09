@@ -7,10 +7,11 @@ import { Resizable, ResizableBox } from "react-resizable";
 export default function Window(props) {
     const {  index, accentclr, oppcolor, openwindows, setopenwindows } = props;
     const {windowname, Content, contentprops} =props.window 
-    const deletewindow = (windowname) => {
+    
+    const deletewindow = (windowindex) => {
  //traverse
  openwindows.forEach((window, index) => {
-    if(window.windowname === windowname){
+    if(index === windowindex){
 
     let tempwindows = openwindows
     tempwindows.splice(index, 1)
@@ -62,7 +63,7 @@ export default function Window(props) {
                         <div></div>
                         <div>{windowname}</div>
                         <XSquare 
-                        onClick={()=>(deletewindow(windowname))}
+                        onClick={()=>(deletewindow(index))}
                         style={{cursor: 'pointer'}} size={15} />
                     </div>
 

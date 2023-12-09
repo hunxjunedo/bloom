@@ -26,8 +26,8 @@ export default function (props) {
             {studytimer ? 
             
             (<div className="timer" style={divstyles}>
-                <h3>Study Timer</h3>
-                <h1 style={{fontSize: xlsize}}>{secondstotime(maxtimersecs - timerprogress)}</h1>
+                <h3 style={{textShadow: '0px 10px 90px black'}}>Study Timer</h3>
+                <h1 style={{fontSize: xlsize, textShadow: '0px 10px 90px black'}}>{secondstotime(maxtimersecs - timerprogress)}</h1>
                 <div style={{display: 'grid', gridAutoFlow: 'column'}}><p onClick={()=>{settimerpaused(false); infostudytimer()}}>resume</p> <p onClick={()=>{settimerpaused(true)}}>pause</p></div>
             </div>) 
             

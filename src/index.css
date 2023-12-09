@@ -134,7 +134,7 @@ cursor: pointer;
   width: 100vw;
   display: grid;
   justify-items: center;
-  align-items: center;
+  align-items: start !important;
   align-items: center;
   height: 100vh;
 }

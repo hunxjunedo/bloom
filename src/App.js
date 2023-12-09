@@ -10,11 +10,21 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Spotify } from 'react-spotify-embed';
 import Window from './window';
+import { FastAverageColor } from 'fast-average-color';
+import $ from 'jquery'
 
 function App() {
+  //calculate random index
+  let maxindex = videoassets.total - 1
+  let minindex = 0
+  let randvid =  Math.floor(Math.random() * (maxindex - minindex + 1)) + minindex;
+//color avg
+// var rndcolor = 'hsl(' + Math.round(Math.random() * 359) + ',100%,50%)';
+ var rndcolor = 'purple'
+
   const playerRef = useRef(null);
   const [playerState, setPlayerState] = useState(null);
-  const [currentvideo, setcurrentvideo] = useState(1)
+  const [currentvideo, setcurrentvideo] = useState(randvid)
   const [twelwehrscheme, settwelwehrscheme] = useState(false)
   const [time, settime] = useState({hour : 23, minute: 23, second: 23, meridium: 'PM', day: 'Monday', month: 'June', date: 11})
   const [studytimer, setstudytimer] = useState(false);
@@ -23,6 +33,7 @@ function App() {
   const [openwindows, setopenwindows] = useState([{windowname: 'empty', content: 'empty', contentprops: {}}])
   const [maxtimersecs, setmaxtimersecs] = useState(15*60)
   const [spotifylink, setspotifylink] = useState('https://open.spotify.com/album/4q3ve949eWWJnuRRPzU8bQ?si=NZABHHnaTWukoZX9RpMCLg');
+  const [colors, setcolor] = useState({avg: rndcolor, opp: 'white'})
   const defaulttitle = 'Bloom'
   useEffect(() => {
     if (playerRef.current) {
@@ -82,8 +93,7 @@ function App() {
       top: 10,
       width: 'fit-content'
     }
-    const accentclr = videoassets.videos[currentvideo].avgcolor
-    const oppclr = videoassets.videos[currentvideo].oppcolor
+
     const msize = 20; const xlsize = 80; const ssize = 12
   return (
 <>
@@ -91,15 +101,15 @@ function App() {
 
 {
   openwindows.map((window, index)=> (
-    <Window {...{window}} index={index} accentclr={accentclr} oppcolor={oppclr} {...{openwindows, setopenwindows}} />
+    <Window {...{window}} index={index} accentclr={colors.avg} oppcolor={colors.opp} {...{openwindows, setopenwindows}} />
   ))
 }
-<Player preload ref={playerRef}  controls={false} muted={true} style={{width: '100vw', height: '100vh', position: 'absolute', PointerEvents: 'none'}}	 src={videoassets['videos'][currentvideo].url} >
+<Player  preload ref={playerRef}  controls={false} muted={true} style={{width: '100vw', height: '100vh', position: 'absolute', PointerEvents: 'none'}}	 src={videoassets['videos'][currentvideo]["videos"]["small"].url} >
 
         </Player>
         <Spotify wide style={playerstyles} link={spotifylink} />
-                <SupportDock {...{accentclr, openwindows, setopenwindows, oppclr, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
-               <Clock { ...{twelwehrscheme, msize, oppclr, xlsize, ssize, secondstotime, maxtimersecs, settwelwehrscheme, time, timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress}} />
+                <SupportDock {...{accentclr: colors.avg, openwindows, setopenwindows, oppclr: colors.opp, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
+               <Clock { ...{twelwehrscheme, msize, oppclr: colors.opp, xlsize, ssize, secondstotime, maxtimersecs, settwelwehrscheme, time, timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress}} />
               </>
 
   )
