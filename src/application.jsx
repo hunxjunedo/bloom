@@ -7,7 +7,7 @@ import Window from './window';
 import Settings from './settings';
 import Notes from './notes';
 export default function Application(props){
-    const {openwindows, setopenwindows, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink} = props
+    const {openwindows, setopenwindows, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, settimerprogress} = props
     console.log(openwindows)
     const windowEmit = (type, Content, contentprops) => {
         let windowexists = false
@@ -32,12 +32,12 @@ export default function Application(props){
         case 'settings':
             var icon = settingSVG
             var content = Settings
-            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs}
+            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress}
             break;
         case 'notes':
             icon = notesSVG
             content = Notes
-            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs}
+            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress}
 
         break;    
     
