@@ -86,7 +86,7 @@ export default function (props) {
                             }}>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='settings'/>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='notes'/>
-
+                                <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='tasks'/>
                             </div>
 
                         )

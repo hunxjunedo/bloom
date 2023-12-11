@@ -83,6 +83,7 @@ export default function Window(props) {
                                     }
                                     ,
                                     Collapse: {
+                                        headerBg: 'rgb(40, 40, 40)',
                                     }
                                     ,
                                     Modal: {

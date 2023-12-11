@@ -27,6 +27,10 @@ body {
   justify-self: end;
 }
 
+.ant-collapse{
+  min-width: 90%;
+}
+
 
 
 .react-resizable {
