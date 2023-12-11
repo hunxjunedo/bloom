@@ -5,7 +5,7 @@ import Application from "./application";
 
 export default function (props) {
 
-    const { studytimer, openwindows, setopenwindows, setstudytimer, accentclr, msize, xlsize, ssize, spotifylink, setspotifylink, timerpaused, maxtimersecs, settimerprogress, setmaxtimersecs, settimerpaused } = props
+    const { studytimer, openwindows, setopenwindows, setstudytimer, accentclr, msize, xlsize, ssize, spotifylink, setspotifylink, timerpaused, maxtimersecs, settimerprogress, setmaxtimersecs, settimerpaused, setaccentclr } = props
     const divstyles = {
         color: accentclr,
         display: 'grid',
@@ -84,7 +84,7 @@ export default function (props) {
                                 justifyItems: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='settings'/>
+                                <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, setaccentclr}} type='settings'/>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='notes'/>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='tasks'/>
                             </div>

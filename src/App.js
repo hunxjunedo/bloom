@@ -20,8 +20,8 @@ function App() {
   let randvid =  Math.floor(Math.random() * (maxindex - minindex + 1)) + minindex;
 //color avg
 // var rndcolor = 'hsl(' + Math.round(Math.random() * 359) + ',100%,50%)';
- var rndcolor = 'purple'
-
+  const oppositecolor = 'white'
+  const [accentclr, setaccentclr] = useState('purple')
   const playerRef = useRef(null);
   const [playerState, setPlayerState] = useState(null);
   const [currentvideo, setcurrentvideo] = useState(randvid)
@@ -33,7 +33,6 @@ function App() {
   const [openwindows, setopenwindows] = useState([{windowname: 'empty', content: 'empty', contentprops: {}}])
   const [maxtimersecs, setmaxtimersecs] = useState(15*60)
   const [spotifylink, setspotifylink] = useState('https://open.spotify.com/album/4q3ve949eWWJnuRRPzU8bQ?si=NZABHHnaTWukoZX9RpMCLg');
-  const [colors, setcolor] = useState({avg: rndcolor, opp: 'white'})
   const defaulttitle = 'Bloom'
   useEffect(() => {
     if (playerRef.current) {
@@ -101,15 +100,15 @@ function App() {
 
 {
   openwindows.map((window, index)=> (
-    <Window {...{window}} index={index} accentclr={colors.avg} oppcolor={colors.opp} {...{openwindows, setopenwindows}} />
+    <Window {...{window}} index={index} accentclr={accentclr} oppcolor={oppositecolor} {...{openwindows, setopenwindows}} />
   ))
 }
 <Player  preload ref={playerRef}  controls={false} muted={true} style={{width: '100vw', height: '100vh', position: 'absolute', PointerEvents: 'none'}}	 src={videoassets['videos'][currentvideo]["videos"]["small"].url} >
 
         </Player>
         <Spotify wide style={playerstyles} link={spotifylink} />
-                <SupportDock {...{accentclr: colors.avg, openwindows, setopenwindows, oppclr: colors.opp, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
-               <Clock { ...{twelwehrscheme, msize, oppclr: colors.opp, xlsize, ssize, secondstotime, maxtimersecs, settwelwehrscheme, time, timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress}} />
+                <SupportDock {...{accentclr, setaccentclr, openwindows, setopenwindows, oppclr: oppositecolor, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
+               <Clock { ...{twelwehrscheme, msize, oppclr: oppositecolor, xlsize, ssize, secondstotime, maxtimersecs, settwelwehrscheme, time, timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress}} />
               </>
 
   )

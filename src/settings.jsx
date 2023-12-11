@@ -1,4 +1,4 @@
-import { Input, InputNumber, Switch } from "antd"
+import { ColorPicker, Input, InputNumber, Switch } from "antd"
 const genericdiv = {
     width: '100%',
     display: 'grid',
@@ -22,7 +22,7 @@ function isValidHttpUrl(string) {
   }
 
 export default function Settings(props) {
-const {accentclr, studytimer, spotifylink, setspotifylink, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress} = props 
+const {accentclr, studytimer, spotifylink, setspotifylink, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress, setaccentclr} = props 
 console.log(spotifylink) 
 return (
         <div className="bold" style={{
@@ -44,6 +44,10 @@ return (
       <div style={genericdiv}>
         <p className="start">Spotify Link</p>
         <p className="end"><Input placeholder="press enter" defaultValue={spotifylink} onPressEnter={(e)=>( isValidHttpUrl(e.target.value) ? setspotifylink(e.target.value)  : console.log('dont be naughty'))} /></p>
+      </div>
+      <div style={genericdiv}>
+        <p className="start">Theme Color</p>
+        <p className="end"><ColorPicker defaultValue={accentclr} onChange={(val, color)=>(setaccentclr(color))} /></p>
       </div>
         </div>
     )

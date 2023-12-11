@@ -103,7 +103,7 @@ export default function Window(props) {
                                 }
                             }}
                             >
-                                <Content {...contentprops} />
+                                <Content {...contentprops} accentclr={accentclr} />
                             </ConfigProvider>
                         }
                     </div>

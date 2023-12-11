@@ -6,6 +6,7 @@ const { TextArea } = Input;
 
 
 export default function Notes(props) {
+    console.log("re render called!!", props.accentclr)
     //first check if data exists
     const [createmode, setcreatemode] = useState(false)
     const [newnote, setnewnote] = useState({ title: '', text: '' })
@@ -108,17 +109,17 @@ export default function Notes(props) {
     }
 
     return (
-        <div style={{
+        <div color={accentclr} style={{
             display: 'flex',
             gridAutoFlow: 'row',
             flexFlow: 'row',
             flexDirection: 'column',
-            color: accentclr,
             gap: '5px',
             textAlign: "center",
             alignContent: dataexists ? "none" : "center",
             alignItems: dataexists ? "center" : "none",
             gridTemplateRows:  "auto",
+            color: accentclr,
             height: '100%'
         }}>
             <Modal className="bold" title={tasksneeded ? 'Add Task' : 'Add Note'} onOk={handleNewNote} open={createmode} onCancel={() => (setcreatemode(false))}>
@@ -141,11 +142,11 @@ export default function Notes(props) {
                 dataexists && data.length > 0 ?
                     (
                         <>
-                            <div>{<PlusIcon style={{cursor: 'pointer'}} onClick={()=>(setcreatemode(true))} />}</div>
+                            <div>{<PlusIcon stroke={accentclr} color={accentclr} style={{cursor: 'pointer'}} onClick={()=>(setcreatemode(true))} />}</div>
                                {
 
                                tasksneeded === 'notes' ? <Collapse bordered={false} items={formatedData} /> : data.map((onetask, index) => (
-                                <div className="bold" style={taskstyles} >{onetask.done ? <strike>{onetask.text}</strike> : <>{onetask.text} <CheckCircle onClick={()=>(markasdone(index))} style={checkstyle} size={14} /></> }</div>
+                                <div className="bold" color={accentclr} style={taskstyles} >{onetask.done ? <strike>{onetask.text}</strike> : <>{onetask.text} <CheckCircle onClick={()=>(markasdone(index))} style={checkstyle} size={14} /></> }</div>
                                ))
                                }
                         </>
