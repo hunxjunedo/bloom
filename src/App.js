@@ -98,14 +98,14 @@ function App() {
       scale: ismobile ? '0.5' : '1'
     }
 
-    const msize = ismobile ? 15 : 20; const xlsize =  ismobile ? 60 : 80; const ssize = ismobile ? 9 : 12
+    const msize = ismobile ? 15 : 20; const xlsize =  ismobile ? 60 : 80; const ssize = ismobile ? 12 : 12
   return (
 <>
 <ToastContainer/>
 
 {
   openwindows.map((window, index)=> (
-    <Window {...{window}} index={index} accentclr={accentclr} oppcolor={oppositecolor} {...{openwindows, setopenwindows}} />
+    <Window {...{window}} index={index} accentclr={accentclr} oppcolor={oppositecolor} {...{openwindows, setopenwindows, msize, xlsize, ssize}} />
   ))
 }
 <Player  preload ref={playerRef}  controls={false} muted={true} style={{width: '100vw', height: '100vh', position: 'absolute', PointerEvents: 'none'}}	 src={videoassets['videos'][currentvideo]["videos"]["small"].url} >

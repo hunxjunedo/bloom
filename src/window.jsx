@@ -5,7 +5,7 @@ import Draggable from "react-draggable";
 import { Resizable, ResizableBox } from "react-resizable";
 
 export default function Window(props) {
-    const {  index, accentclr, oppcolor, openwindows, setopenwindows } = props;
+    const {  index, accentclr, oppcolor, openwindows, setopenwindows, msize, xlsize, ssize } = props;
     const {windowname, Content, contentprops} =props.window 
     
     const deletewindow = (windowindex) => {
@@ -38,6 +38,7 @@ export default function Window(props) {
                         background: 'rgb(10, 10, 10, 0.9)',
                         backdropFilter: 'blur(10px)',
                         zIndex: 20,
+                        fontSize: ssize,
                         borderRadius: 20,
                         boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
                         display: 'grid',
