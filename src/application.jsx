@@ -10,6 +10,13 @@ import Notes from './notes';
 export default function Application(props){
     const {openwindows, setopenwindows, setaccentclr, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, settimerprogress} = props
     console.log(openwindows)
+        //the issue of draggable not allowing click
+        // var clicked = false
+        // $(".glower").on('mousedown', e => { clicked = true});
+        // $(document).on('mousemove', e => {clicked = false});
+        // $(".glower").on('mouseup', e => {clicked ?  glowcolor + 1 >= availableglows.length ? setglowcolor(0) : setglowcolor(glowcolor + 1) : console.log('good');  });
+        // clicked = false;
+          ///
     const windowEmit = (type, Content, contentprops) => {
         let windowexists = false
         // //first check if it already exists
@@ -60,7 +67,7 @@ export default function Application(props){
             cursor: 'pointer',
             width: '90%',
             height: '90%'
-        }} src={icon} onClick={()=>{windowEmit(props.type, content, contentprops)}} />
+        }} src={icon} className='appicon' onClick={()=>{windowEmit(props.type, content, contentprops)}} />
         {
         }
    </>

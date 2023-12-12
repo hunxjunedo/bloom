@@ -37,7 +37,7 @@ export default function (props) {
                 }
             }
         }}>
-            <Draggable cancel={'.switch, input'}>
+            <Draggable cancel={'.switch, input, .appicon'}>
                 <div style={{
                     position: 'absolute',
                     left: 10,

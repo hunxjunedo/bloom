@@ -26,7 +26,7 @@ export default function Window(props) {
         windowname !== 'empty' ?
 
             (
-  <Draggable cancel=" .react-resizable-handle, .inner-conent ">
+  <Draggable cancel=" .react-resizable-handle, .inner-conent, .crossicon ">
                   <ResizableBox
                     minConstraints={[100, 100]} maxConstraints={[1000, 1000]} style={{
                         resize: 'both',
@@ -62,7 +62,7 @@ export default function Window(props) {
                     }} className="controls bold">
                         <div></div>
                         <div>{windowname}</div>
-                        <XSquare 
+                        <XSquare className="crossicon"
                         onClick={()=>(deletewindow(index))}
                         style={{cursor: 'pointer'}} size={15} />
                     </div>
