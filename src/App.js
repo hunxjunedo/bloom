@@ -34,6 +34,8 @@ function App() {
   const [maxtimersecs, setmaxtimersecs] = useState(15*60)
   const [spotifylink, setspotifylink] = useState('https://open.spotify.com/album/4q3ve949eWWJnuRRPzU8bQ?si=NZABHHnaTWukoZX9RpMCLg');
   const defaulttitle = 'Bloom'
+  const ismobile = window.innerWidth < 700
+  console.log(window.innerWidth)
   useEffect(() => {
     if (playerRef.current) {
       playerRef.current.subscribeToStateChange((state) => {
@@ -90,10 +92,11 @@ function App() {
       position: 'absolute',
       right: 10,
       top: 10,
-      width: 'fit-content'
+      width: 'fit-content',
+      scale: ismobile ? '0.5' : '1'
     }
 
-    const msize = 20; const xlsize = 80; const ssize = 12
+    const msize = ismobile ? 15 : 20; const xlsize =  ismobile ? 60 : 80; const ssize = ismobile ? 9 : 12
   return (
 <>
 <ToastContainer/>
@@ -107,7 +110,7 @@ function App() {
 
         </Player>
         <Spotify wide style={playerstyles} link={spotifylink} />
-                <SupportDock {...{accentclr, setaccentclr, openwindows, setopenwindows, oppclr: oppositecolor, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
+                <SupportDock {...{accentclr, ismobile, setaccentclr, openwindows, setopenwindows, oppclr: oppositecolor, studytimer,msize, xlsize, ssize, spotifylink, setspotifylink, setstudytimer, timerpaused, settimerpaused, settimerprogress, maxtimersecs, setmaxtimersecs}} />
                <Clock { ...{twelwehrscheme, msize, oppclr: oppositecolor, xlsize, ssize, secondstotime, maxtimersecs, settwelwehrscheme, time, timerpaused, settimerpaused, studytimer, setstudytimer, timerprogress}} />
               </>
 

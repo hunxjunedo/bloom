@@ -5,7 +5,7 @@ import Application from "./application";
 
 export default function (props) {
 
-    const { studytimer, openwindows, setopenwindows, setstudytimer, accentclr, msize, xlsize, ssize, spotifylink, setspotifylink, timerpaused, maxtimersecs, settimerprogress, setmaxtimersecs, settimerpaused, setaccentclr } = props
+    const { studytimer, openwindows, setopenwindows, ismobile, setstudytimer, accentclr, msize, xlsize, ssize, spotifylink, setspotifylink, timerpaused, maxtimersecs, settimerprogress, setmaxtimersecs, settimerpaused, setaccentclr } = props
     const divstyles = {
         color: accentclr,
         display: 'grid',
@@ -44,12 +44,12 @@ export default function (props) {
                     top: 10
                 }}>
                     <div  style={{
-                        borderRadius: 20,
+                        borderRadius: ismobile ? 12 : 20,
                         background: 'rgb(156, 156, 156, 0.6)',
                         cursor: 'move',
                         backdropFilter: 'blur(10px)',
-                        width: '5vw',
-                        height: '5vw',
+                        width: ismobile ? '10vw' : '5vw',
+                        height: ismobile ? '10vw' : '5vw',
                         display: 'grid',
                         justifyItems: 'center',
                         alignItems: 'center',
@@ -71,15 +71,15 @@ export default function (props) {
                     {
                         (
                             <div style={{
-                                width: '5vw',
+                                width: ismobile ? '10vw' : '5vw',
                                 height: 'fit-content',
                                 display: 'grid',
                                 gridAutoFlow: 'row',
                                 position: "absolute",
-                                top: '6vw',
+                                top: ismobile ? '15vw': '10vw',
                                 left: 10,
                                 background: 'rgb(156, 156, 156, 0.6)',
-                                borderRadius: 20,
+                                borderRadius: ismobile ? 10 : 20,
                                 backdropFilter: "blur(10px)",
                                 justifyItems: 'center',
                                 alignItems: 'center'

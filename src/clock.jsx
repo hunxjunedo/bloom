@@ -35,8 +35,8 @@ export default function (props) {
                 <div style={divstyles}
                     onClick={() => { settwelwehrscheme(!twelwehrscheme) }}
                 >
-                    <h3 style={{ fontSize: msize }}>{time.day}, {time.month} {time.date}</h3>
-                    <h1 className={'bold'} style={{ fontSize: xlsize }}>  {time.hour}:{time.minute} </h1>
+                    <h3 style={{ fontSize: msize, textShadow: '0px 10px 90px black' }}>{time.day}, {time.month} {time.date}</h3>
+                    <h1 className={'bold'} style={{ fontSize: xlsize, textShadow: '0px 10px 90px black' }}>  {time.hour}:{time.minute} </h1>
                 </div>
             ) }
         </Draggable>
