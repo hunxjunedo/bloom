@@ -98,7 +98,7 @@ function App() {
       scale: ismobile ? '0.5' : '1'
     }
 
-    const msize = ismobile ? 15 : 20; const xlsize =  ismobile ? 60 : 80; const ssize = ismobile ? 12 : 12
+    const msize = ismobile ? 15 : 20; const xlsize =  ismobile ? 60 : 80; const ssize = ismobile ? 12 : 15
   return (
 <>
 <ToastContainer/>

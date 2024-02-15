@@ -76,7 +76,7 @@ export default function (props) {
                                 display: 'grid',
                                 gridAutoFlow: 'row',
                                 position: "absolute",
-                                top: ismobile ? '15vw': '10vw',
+                                top: ismobile ? '15vw': '6vw',
                                 left: 10,
                                 background: 'rgb(156, 156, 156, 0.6)',
                                 borderRadius: ismobile ? 10 : 20,
