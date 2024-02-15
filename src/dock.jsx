@@ -84,7 +84,7 @@ export default function (props) {
                                 justifyItems: 'center',
                                 alignItems: 'center'
                             }}>
-                                <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, setaccentclr}} type='settings'/>
+                                <Application {...{openwindows, settimerpaused, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, setaccentclr}} type='settings'/>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='notes'/>
                                 <Application {...{openwindows, accentclr, setopenwindows, settimerprogress, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink}} type='tasks'/>
                             </div>

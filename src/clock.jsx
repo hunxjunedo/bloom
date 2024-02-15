@@ -22,13 +22,13 @@ export default function (props) {
         textAlign: 'center'
     }
     return (
-        <Draggable>
+        <Draggable cancel=".timer_controls">
             {studytimer ? 
             
             (<div className="timer" style={divstyles}>
                 <h3 style={{textShadow: '0px 10px 90px black'}}>Study Timer</h3>
                 <h1 style={{fontSize: xlsize, textShadow: '0px 10px 90px black'}}>{secondstotime(maxtimersecs - timerprogress)}</h1>
-                <div style={{display: 'grid', gridAutoFlow: 'column'}}><p onClick={()=>{settimerpaused(false); infostudytimer()}}>resume</p> <p onClick={()=>{settimerpaused(true)}}>pause</p></div>
+                <div style={{display: 'grid', gridAutoFlow: 'column'}}><p className="timer_controls" onClick={()=>{settimerpaused(false); infostudytimer()}}>resume</p> <p className="timer_controls" onClick={()=>{settimerpaused(true)}}>pause</p></div>
             </div>) 
             
             : (

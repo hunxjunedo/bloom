@@ -22,7 +22,7 @@ function isValidHttpUrl(string) {
   }
 
 export default function Settings(props) {
-const {accentclr, studytimer, spotifylink, setspotifylink, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress, setaccentclr} = props 
+const {accentclr, studytimer, spotifylink, settimerpaused, setspotifylink, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress, setaccentclr} = props 
 console.log(spotifylink) 
 return (
         <div className="bold" style={{
@@ -35,7 +35,7 @@ return (
         }}>
       <div style={genericdiv}>
    <p className="start">Study Timer</p>
-   <p className="end"><Switch defaultChecked={studytimer} onChange={(changed) => {settimerprogress(0);setstudytimer(changed)}} /></p>
+   <p className="end"><Switch defaultChecked={studytimer} onChange={(changed) => {settimerprogress(0);setstudytimer(changed); settimerpaused(false); }} /></p>
       </div>
       <div style={genericdiv}>
    <p className="start">Timer Minutes</p>

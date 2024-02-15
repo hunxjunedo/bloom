@@ -8,7 +8,7 @@ import Window from './window';
 import Settings from './settings';
 import Notes from './notes';
 export default function Application(props){
-    const {openwindows, setopenwindows, setaccentclr, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, settimerprogress} = props
+    const {openwindows, settimerpaused, setopenwindows, setaccentclr, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, spotifylink, setspotifylink, settimerprogress} = props
     console.log(openwindows)
         //the issue of draggable not allowing click
         // var clicked = false
@@ -40,7 +40,7 @@ export default function Application(props){
         case 'settings':
             var icon = settingSVG
             var content = Settings
-            var contentprops = {spotifylink, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress, setaccentclr}
+            var contentprops = {spotifylink,settimerpaused, setspotifylink, accentclr, studytimer, setstudytimer, maxtimersecs, setmaxtimersecs, settimerprogress, setaccentclr}
             break;
         case 'notes':
             icon = notesSVG
